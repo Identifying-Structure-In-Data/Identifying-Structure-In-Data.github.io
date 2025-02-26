@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CVPR Tutorial: Identifying Structure in Data</title>
+  <title>CVPR 2025 - Identifying Structure in Data</title>
   <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -24,6 +24,21 @@
       padding: 20px 0;
       background-color: #f8f9fa;
       margin-top: 60px;
+    }
+    /* Style for the speaker images and social icons */
+    .speaker-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    .social-icon {
+      width: 30px;
+      height: 30px;
+    }
+    /* Banner styling */
+    #banner img {
+      max-height: 275px;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -48,11 +63,17 @@
           <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
           <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
           <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Banner Section -->
+  <section id="banner">
+    <img src="banner.png" alt="Banner Image" class="img-fluid w-100">
+  </section>
 
   <!-- Main Content -->
   <div class="container">
@@ -110,7 +131,7 @@
               </tr>
               <tr>
                 <td>8:40 - 9:25</td>
-                <td>M. Saquib Sarfraz</td>
+                <td>Marios Koulakis &amp; M. Saquib Sarfraz</td>
                 <td>Clustering and its applications in modern computer vision</td>
               </tr>
               <tr>
@@ -134,59 +155,59 @@
               </tr>
             </tbody>
           </table>
+          <p class="text-muted"><small>* Schedule is tentative and not yet confirmed.</small></p>
         </div>
       </div>
     </section>
 
-     <!-- Materials & Format Section -->
-     <section id="materials">
-        <div class="row">
+    <!-- Materials & Format Section -->
+    <section id="materials">
+      <div class="row">
         <div class="col-md-12">
-            <h2 class="section-title">Materials, Resources &amp; Format</h2>
-            <p>
+          <h2 class="section-title">Materials, Resources &amp; Format</h2>
+          <p>
             We're excited to offer you a wealth of materials and interactive resources to enhance your experience during our tutorial. In addition to hands-on exercises and interactive Jupyter notebooks demonstrating cutting-edge techniques in dimensionality reduction and clustering for computer vision, we've prepared a variety of supportive resources to inspire and engage you.
-            </p>
-            <p>
+          </p>
+          <p>
             We warmly invite you to explore the following resources, which have been thoughtfully curated to spark your curiosity and support your learning journey:
-            </p>
-            <ul>
+          </p>
+          <ul>
             <li>
-                <strong>Questionnaire:</strong>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj5Bh_EEmkBh62T0YgfRU6nNYgY6ZgVgSD19loTHQRLC8bbA/viewform?usp=sharing" target="_blank">
+              <strong>Questionnaire:</strong>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj5Bh_EEmkBh62T0YgfRU6nNYgY6ZgVgSD19loTHQRLC8bbA/viewform?usp=sharing" target="_blank">
                 Share your insights and questions
-                </a>
-                <br />
-                Your responses will help us understand your background, interests, and specific challenges related to dimensionality reduction, clustering, and data curation in computer vision. This will allow us to tailor the tutorial and round table discussion to meet your needs.
+              </a>
+              <br />
+              Your responses will help us understand your background, interests, and specific challenges related to dimensionality reduction, clustering, and data curation in computer vision. This will allow us to tailor the tutorial and round table discussion to meet your needs.
             </li>
             <li>
-                <strong>Awesome GitHub Repositories:</strong>
-                <ul>
+              <strong>Awesome GitHub Repositories:</strong>
+              <ul>
                 <li>
-                    <strong>Dimensionality Reduction:</strong>
-                    <a href="https://github.com/koulakis/awesome-dimensionality-reduction" target="_blank">
+                  <strong>Dimensionality Reduction:</strong>
+                  <a href="https://github.com/koulakis/awesome-dimensionality-reduction" target="_blank">
                     Explore the repository
-                    </a>
-                    <br />
-                    This repository is a curated collection of resources, libraries, and research papers on various dimensionality reduction techniques. Whether you're looking for methods to improve data visualization or seeking practical implementations, you'll find a wealth of information to guide your projects.
+                  </a>
+                  <br />
+                  This repository is a curated collection of resources, libraries, and research papers on various dimensionality reduction techniques. Whether you're looking for methods to improve data visualization or seeking practical implementations, you'll find a wealth of information to guide your projects.
                 </li>
                 <li>
-                    <strong>Clustering:</strong>
-                    <a href="https://github.com/koulakis/awesome-clustering" target="_blank">
+                  <strong>Clustering:</strong>
+                  <a href="https://github.com/koulakis/awesome-clustering" target="_blank">
                     Explore the repository
-                    </a>
-                    <br />
-                    Dive into an extensive collection of clustering techniques ranging from classic algorithms like k-means to advanced modern approaches. This repository offers detailed insights, implementation examples, and case studies to help you apply clustering effectively in computer vision and beyond.
+                  </a>
+                  <br />
+                  Dive into an extensive collection of clustering techniques ranging from classic algorithms like k-means to advanced modern approaches. This repository offers detailed insights, implementation examples, and case studies to help you apply clustering effectively in computer vision and beyond.
                 </li>
-                </ul>
+              </ul>
             </li>
-            </ul>
-            <p>
+          </ul>
+          <p>
             We are thrilled to welcome researchers, practitioners, and students to this half-day in-person tutorial. We hope these resources will spark new ideas and enhance your exploration of the exciting world of computer vision and data analysis.
-            </p>
+          </p>
         </div>
-        </div>
+      </div>
     </section>
-  
 
     <!-- Speakers Section -->
     <section id="speakers">
@@ -198,49 +219,64 @@
       <div class="row">
         <!-- Speaker Card: M. Saquib Sarfraz -->
         <div class="col-md-4">
-          <div class="card mb-4">
+          <div class="card mb-4 text-center">
             <div class="card-body">
+              <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=4YLsmYIAAAAJ&citpid=3" alt="M. Saquib Sarfraz" class="speaker-img rounded-circle mb-2">
               <h5 class="card-title">M. Saquib Sarfraz</h5>
               <p class="card-text">
                 <strong>Principal Scientist AI &amp; Deep Learning</strong><br />
                 Mercedes Benz / Karlsruhe Institute of Technology
               </p>
-              <p>
-                Email:
-                <a href="mailto:saquibsarfraz@gmail.com">saquibsarfraz@gmail.com</a>
-              </p>
+              <div class="d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/saquib-sarfraz-6395783a/" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/linkedin.png" alt="LinkedIn" class="social-icon rounded-circle">
+                </a>
+                <a href="https://scholar.google.com" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/scholar.png" alt="Google Scholar" class="social-icon rounded-circle">
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <!-- Speaker Card: Laurens van der Maaten -->
         <div class="col-md-4">
-          <div class="card mb-4">
+          <div class="card mb-4 text-center">
             <div class="card-body">
+              <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=6GDfcqEAAAAJ&citpid=4" alt="Laurens van der Maaten" class="speaker-img rounded-circle mb-2">
               <h5 class="card-title">Laurens van der Maaten</h5>
               <p class="card-text">
                 <strong>Distinguished Research Scientist</strong><br />
                 Meta AI
               </p>
-              <p>
-                Email:
-                <a href="mailto:lvdmaaten@meta.com">lvdmaaten@meta.com</a>
-              </p>
+              <div class="d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/laurens-van-der-maaten-1255811/" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/linkedin.png" alt="LinkedIn" class="social-icon rounded-circle">
+                </a>
+                <a href="https://scholar.google.com/citations?hl=de&user=6GDfcqEAAAAJ" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/scholar.png" alt="Google Scholar" class="social-icon rounded-circle">
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <!-- Speaker Card: Brandon Duderstadt -->
         <div class="col-md-4">
-          <div class="card mb-4">
+          <div class="card mb-4 text-center">
             <div class="card-body">
+              <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=TIapXZQAAAAJ&citpid=3" alt="Brandon Duderstadt" class="speaker-img rounded-circle mb-2">
               <h5 class="card-title">Brandon Duderstadt</h5>
               <p class="card-text">
                 <strong>Founder &amp; CEO @ Nomic AI</strong><br />
                 Nomic AI
               </p>
-              <p>
-                Email:
-                <a href="mailto:brandon@nomic.ai">brandon@nomic.ai</a>
-              </p>
+              <div class="d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/bstadt/" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/linkedin.png" alt="LinkedIn" class="social-icon rounded-circle">
+                </a>
+                <a href="https://scholar.google.com/citations?hl=de&user=TIapXZQAAAAJ" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/scholar.png" alt="Google Scholar" class="social-icon rounded-circle">
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -248,33 +284,43 @@
       <div class="row">
         <!-- Speaker Card: Marios Koulakis -->
         <div class="col-md-6">
-          <div class="card mb-4">
+          <div class="card mb-4 text-center">
             <div class="card-body">
+              <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=2k0YV9cAAAAJ&citpid=2" alt="Marios Koulakis" class="speaker-img rounded-circle mb-2">
               <h5 class="card-title">Marios Koulakis</h5>
               <p class="card-text">
                 <strong>Machine Learning Scientist &amp; Researcher</strong><br />
                 DeepHealth
               </p>
-              <p>
-                Email:
-                <a href="mailto:marios.koulakis@gmail.com">marios.koulakis@gmail.com</a>
-              </p>
+              <div class="d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/marioskoulakis/" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/linkedin.png" alt="LinkedIn" class="social-icon rounded-circle">
+                </a>
+                <a href="https://scholar.google.com/citations?hl=de&user=2k0YV9cAAAAJ" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/scholar.png" alt="Google Scholar" class="social-icon rounded-circle">
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <!-- Speaker Card: Constantin Seibold -->
         <div class="col-md-6">
-          <div class="card mb-4">
+          <div class="card mb-4 text-center">
             <div class="card-body">
+              <img src="https://media.licdn.com/dms/image/v2/C4D03AQH7u9PhOdXJ1Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663425189912?e=1746057600&v=beta&t=MYmzE3nJeWz-DqBJ81JiM-ksENWHxIh0-64RMIvrM8Y" alt="Constantin Seibold" class="speaker-img rounded-circle mb-2">
               <h5 class="card-title">Constantin Seibold</h5>
               <p class="card-text">
                 <strong>Junior Research Group Leader</strong><br />
                 University Clinic Essen
               </p>
-              <p>
-                Email:
-                <a href="mailto:constanstinseibold@gmail.com">constanstinseibold@gmail.com</a>
-              </p>
+              <div class="d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/constantin-seibold-7669ba250/" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/linkedin.png" alt="LinkedIn" class="social-icon rounded-circle">
+                </a>
+                <a href="https://scholar.google.com/citations?user=rSuG-f4AAAAJ&hl=de" target="_blank" class="mx-1">
+                  <img src="https://constantinseibold.github.io/assets/img/icons/scholar.png" alt="Google Scholar" class="social-icon rounded-circle">
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -287,22 +333,37 @@
         <div class="col-md-12">
           <h2 class="section-title">Selected Publications</h2>
           <ul>
-            <li>Sarfraz, M.S., et al. "Efficient parameter-free clustering using first neighbor relations." CVPR 2019.</li>
-            <li>Sarfraz, M.S., et al. "Temporally-weighted hierarchical clustering for unsupervised action segmentation." CVPR 2021.</li>
-            <li>Sarfraz, M.S., et al. "Hierarchical nearest neighbor graph embedding for efficient dimensionality reduction." CVPR 2022.</li>
-            <li>Van der Maaten, L. and Hinton, G. "Visualizing data using t-SNE." JMLR 2008.</li>
-            <li>Van der Maaten, L. "Barnes-Hut-SNE." ICLR, 2013.</li>
-            <li>Van der Maaten, L. "Accelerating t-SNE using Tree-Based Algorithms." JMLR 2014.</li>
-            <li>Anand, Y., Nussbaum, Z., Duderstadt, B., Schmidt, B., Mulya, A. "Gpt4all: Training an assistant-style chatbot with large scale data distillation from gpt-3.5-turbo." GitHub (2023).</li>
-            <li>Nussbaum, Z., Morris, J.X., Duderstadt, B., Mulyar, A. "Nomic embed: Training a reproducible long context text embedder." arXiv preprint 2024.</li>
-            <li>Helm, H., Duderstadt, B., Park, Y., Priebe, C. "Tracking the perspectives of interacting language models." EMNLP 2024.</li>
+            <li>
+              Sarfraz, Saquib, Vivek Sharma, and Rainer Stiefelhagen. "Efficient parameter-free clustering using first neighbor relations." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2019.
+            </li>
+            <li>
+              Sarfraz, S., Murray, N., Sharma, V., Diba, A., Van Gool, L., &amp; Stiefelhagen, R. (2021). Temporally-weighted hierarchical clustering for unsupervised action segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 11225-11234).
+            </li>
+            <li>
+              Sarfraz, S., Koulakis, M., Seibold, C., &amp; Stiefelhagen, R. (2022). Hierarchical nearest neighbor graph embedding for efficient dimensionality reduction. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 336-345).
+            </li>
+            <li>
+              Van der Maaten, L. and Hinton, G. "Visualizing data using t-SNE." JMLR 2008.
+            </li>
+            <li>
+              Van der Maaten, L. "Barnes-Hut-SNE." ICLR, 2013.
+            </li>
+            <li>
+              Van der Maaten, L. "Accelerating t-SNE using Tree-Based Algorithms." JMLR 2014.
+            </li>
+            <li>
+              Anand, Y., Nussbaum, Z., Duderstadt, B., Schmidt, B., Mulya, A. "Gpt4all: Training an assistant-style chatbot with large scale data distillation from gpt-3.5-turbo." GitHub (2023).
+            </li>
+            <li>
+              Nussbaum, Z., Morris, J.X., Duderstadt, B., Mulyar, A. "Nomic embed: Training a reproducible long context text embedder." arXiv preprint 2024.
+            </li>
+            <li>
+              Helm, H., Duderstadt, B., Park, Y., Priebe, C. "Tracking the perspectives of interacting language models." EMNLP 2024.
+            </li>
           </ul>
         </div>
       </div>
     </section>
-
-   
-  
 
     <!-- Contact & Bio Sketches Section -->
     <section id="contact">
@@ -310,7 +371,7 @@
         <div class="col-md-12">
           <h2 class="section-title">Contact &amp; Bio Sketches</h2>
           <p>
-            For further information or inquiries, please contact the organizers via the email addresses listed in the speakers’ section. Detailed bio sketches for each speaker are available upon request.
+            For further information or inquiries, please contact the organizers via the social links provided in the speakers’ section. Detailed bio sketches for each speaker are available upon request.
           </p>
         </div>
       </div>
