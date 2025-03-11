@@ -11,10 +11,16 @@
   />
   <style>
     body {
-      padding-top: 70px;
+      padding-top: 0px;
     }
     .navbar-brand {
       font-weight: bold;
+    }
+    .overlay-logo {
+      position: absolute;
+      top: 20px; /* Adjust based on your design */
+      left: 20px; /* Adjust based on your design */
+      width: 100px; /* Resize as needed */
     }
     .section-title {
       margin-top: 60px;
@@ -37,8 +43,30 @@
     }
     /* Banner styling */
     #banner img {
-      max-height: 275px;
+      max-height: 100%;
       object-fit: cover;
+    }
+
+    #downloadButton {
+      padding: 12px 30px;
+      background-color: #4CAF50; /* Green background */
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    #downloadButton:hover {
+      background-color: #45a049; /* Darker green */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    #downloadButton:active {
+      background-color: #388e3c; /* Even darker green when clicked */
+      transform: scale(0.98); /* Slightly shrink on click */
     }
   </style>
 </head>
@@ -71,9 +99,40 @@
   </nav>
 
   <!-- Banner Section -->
-  <section id="banner">
-    <img src="banner.png" alt="Banner Image" class="img-fluid w-100">
+  <section id="banner" class="d-flex align-items-center position-relative" style="height: 90vh;">
+    <div class="container position-absolute start-0 translate-middle-y text-white p-4" 
+        style="background: rgba(255, 255, 255, 0.108); margin-left:15%; margin-top:15%; max-width:40%; border-radius: 10px;">
+      <div style="margin-bottom: 5%;">
+        <h1>Identifying Structure in Data:  </h1>
+        <h2>All you need to know about Dimensionality Reduction, Clustering and more</h2>
+      </div>
+      <h3>Half-Day Tutorial</h3>
+      <div>              
+        <p>
+          <strong> CVPR 2025 | June 11/12, 2025 </strong><br>
+          <strong>In-Person, Music City Center, Nashville TN </strong>
+        </p>
+      </div>
+      <button id="downloadButton">Download Calendar Event</button>
+
+      <!-- This is the link that will trigger the download of the .ics file -->
+      <a id="downloadLink" href="calendar.ics" download style="display: none;"></a>
+      
+      <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+          document.getElementById('downloadLink').click();
+        });
+      </script>
+    </div>
+
+    <!-- SVG Logo Overlay -->
+    <img src="cvpr-navbar-logo.svg" alt="CVPR Logo" class="position-absolute top-50 start-50 translate-middle"
+        style="width: 400px; height: auto; z-index: 2; opacity: 0.8; margin-left: 20%; margin-top: -250px; ">
+
+    <!-- Background Banner Image -->
+    <img src="banner-1.jpg" alt="Banner Image" class="img-fluid w-100 h-100 object-fit-cover">
   </section>
+
 
   <!-- Main Content -->
   <div class="container">

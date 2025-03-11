@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CVPR 2025//NONSGML Event//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:Half-Day Tutorial - CVPR 2025
+DESCRIPTION:Join us for a half-day tutorial at CVPR 2025. Topics include clustering, dimensionality reduction, and scaling methods.\n\nSchedule:\n8:30 - 8:40 - Opening Remarks by Constantin Seibold\n8:40 - 9:25 - Clustering and its applications in modern computer vision by M. Saquib Sarfraz, Marios Koulakis\n9:25 - 10:10 - How to use and not use modern dimension reduction techniques by Laurens van der Maaten\n10:10 - 10:20 - Coffee Break ☕\n10:20 - 11:05 - Scaling dimensionality reduction with NOMAD projection by Brandon Duderstadt\n11:05 - 12:00 - Q&A and Panel Discussion with All Speakers
+LOCATION:Music City Center, Nashville TN
+DTSTART;TZID=America/Chicago:20250611T083000
+DTEND;TZID=America/Chicago:20250611T120000
+DTSTAMP:20250311T000000Z
+BEGIN:VALARM
+TRIGGER:-PT15M
+DESCRIPTION:Reminder: Half-Day Tutorial - CVPR 2025
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
