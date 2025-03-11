@@ -68,6 +68,35 @@
       background-color: #388e3c; /* Even darker green when clicked */
       transform: scale(0.98); /* Slightly shrink on click */
     }
+
+    .bannerlogo {
+      width: 30%; 
+      height: auto; 
+      z-index: 2;
+      opacity: 0.8;
+
+      margin-top: -25%;
+      margin-left: 60%;
+    }
+
+    .bannercontainer {
+      max-width: 40%;
+      background: rgba(255, 255, 255, 0.108); 
+      margin-left:15%;
+      margin-top:15%; 
+      margin-bottom:5%; 
+      border-radius: 10px; 
+    }
+    @media screen and (max-width: 768px) {
+      .bannercontainer {
+          margin-left:10%;
+          max-width:80%;
+      }
+
+      .bannerlogo {
+        visibility: hidden;
+      }
+  }
   </style>
 </head>
 <body>
@@ -99,9 +128,10 @@
   </nav>
 
   <!-- Banner Section -->
-  <section id="banner" class="d-flex align-items-center position-relative" style="height: 90vh;">
-    <div class="container position-absolute start-0 translate-middle-y text-white p-4" 
-        style="background: rgba(255, 255, 255, 0.108); margin-left:15%; margin-top:15%; max-width:40%; border-radius: 10px;">
+  <section id="banner" class="d-flex align-items-center position-relative" style="height: 100vh; background: url('banner-1.jpg') center/cover no-repeat fixed;">
+    <img src="cvpr-navbar-logo.svg" alt="CVPR Logo" class="bannerlogo position-absolute">
+
+    <div class="bannercontainer text-white p-4" >
       <div style="margin-bottom: 5%;">
         <h1>Identifying Structure in Data:  </h1>
         <h2>All you need to know about Dimensionality Reduction, Clustering and more</h2>
@@ -125,12 +155,6 @@
       </script>
     </div>
 
-    <!-- SVG Logo Overlay -->
-    <img src="cvpr-navbar-logo.svg" alt="CVPR Logo" class="position-absolute top-50 start-50 translate-middle"
-        style="width: 400px; height: auto; z-index: 2; opacity: 0.8; margin-left: 20%; margin-top: -250px; ">
-
-    <!-- Background Banner Image -->
-    <img src="banner-1.jpg" alt="Banner Image" class="img-fluid w-100 h-100 object-fit-cover">
   </section>
 
 
