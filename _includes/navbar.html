@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        {% assign tutorials = site.events | where: "type", "tutorial" | sort: "date" | reverse %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tutorials
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fw-bold" href="{{ '/tutorials/' | relative_url }}">View All Tutorials</a></li>
+            {% if tutorials.size > 0 %}
+            <li><hr class="dropdown-divider"></li>
+            {% for event in tutorials %}
+            <li>
+              <a class="dropdown-item" href="{{ event.url | relative_url }}">
+                {{ event.title }}<br>
+                <small class="text-muted">{{ event.venue }} &middot; {{ event.date | date: "%b %d, %Y" }}</small>
+              </a>
+            </li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+
+        {% assign workshops = site.events | where: "type", "workshop" | sort: "date" | reverse %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Workshops
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fw-bold" href="{{ '/workshops/' | relative_url }}">View All Workshops</a></li>
+            {% if workshops.size > 0 %}
+            <li><hr class="dropdown-divider"></li>
+            {% for event in workshops %}
+            <li>
+              <a class="dropdown-item" href="{{ event.url | relative_url }}">
+                {{ event.title }}<br>
+                <small class="text-muted">{{ event.venue }} &middot; {{ event.date | date: "%b %d, %Y" }}</small>
+              </a>
+            </li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+
+        {% assign meetups = site.events | where: "type", "meetup" | sort: "date" | reverse %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Meetups
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fw-bold" href="{{ '/meetups/' | relative_url }}">View All Meetups</a></li>
+            {% if meetups.size > 0 %}
+            <li><hr class="dropdown-divider"></li>
+            {% for event in meetups %}
+            <li>
+              <a class="dropdown-item" href="{{ event.url | relative_url }}">
+                {{ event.title }}<br>
+                <small class="text-muted">{{ event.venue }} &middot; {{ event.date | date: "%b %d, %Y" }}</small>
+              </a>
+            </li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+      </ul>
+
+      {% if page.layout == 'event' %}
+      <ul class="navbar-nav">
+        {% if page.overview %}<li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>{% endif %}
+        {% if page.schedule %}<li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>{% endif %}
+        {% if page.materials %}<li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>{% endif %}
+        {% if page.speakers %}<li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>{% endif %}
+        {% if page.floorplan %}<li class="nav-item"><a class="nav-link" href="#floorplan">Floor Plan</a></li>{% endif %}
+        {% if page.publications %}<li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>{% endif %}
+        {% if page.contact %}<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>{% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</nav>

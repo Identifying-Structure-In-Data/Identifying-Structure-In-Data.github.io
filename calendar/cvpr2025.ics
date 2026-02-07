@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CVPR 2025//NONSGML Event//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:Technical Talks - CVPR 2025
+DESCRIPTION:Join us in Room 106 B for a full afternoon of technical talks.\n\nSchedule:\n13:00 - 13:15 - Welcome and Opening Remarks by Constantin Seibold\n13:15 - 14:15 - Clustering and its applications in modern computer vision by M. Saquib Sarfraz, Marios Koulakis\n14:15 - 15:15 - How to use and not use modern dimension reduction techniques for data visualization by Laurens van der Maaten\n15:15 - 15:30 - Coffee Break ☕\n15:30 - 16:30 - Scaling dimensionality reduction with NOMAD projection by Brandon Duderstadt\n16:30 - 17:00 - Q&A and Panel Discussion with All Speakers
+LOCATION:Room 106 B, Music City Center, Nashville TN
+DTSTART;TZID=America/Chicago:20250612T130000
+DTEND;TZID=America/Chicago:20250612T170000
+DTSTAMP:20250311T000000Z
+BEGIN:VALARM
+TRIGGER:-PT15M
+DESCRIPTION:Reminder: Technical Talks - CVPR 2025
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,136 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center position-relative">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative text-center text-white">
+    <h1 class="display-3 fw-bold mb-3">{{ site.title }}</h1>
+    <p class="lead mb-2" style="max-width: 700px; margin: 0 auto;">{{ site.description }}</p>
+    <p class="hero-tagline mb-4">Bridging theory and practice in data exploration</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#about" class="btn btn-light btn-lg">Learn More</a>
+      <a href="{{ '/tutorials/' | relative_url }}" class="btn btn-outline-light btn-lg">Browse Events</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why This Matters Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why This Matters</h2>
+      <p class="lead text-muted" style="max-width: 720px; margin: 0 auto;">
+        As datasets grow to millions of samples and models scale to billions of parameters, understanding the structure hidden within data has never been more critical.
+      </p>
+    </div>
+
+    <!-- Block 1: Image LEFT, Text RIGHT -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="placeholder-img placeholder-left">
+          <span>Dimensionality Reduction Visualization</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="fw-bold">The Curse of Dimensionality</h3>
+        <p>
+          High-dimensional data is inherently difficult to visualize and interpret. Techniques like <strong>t-SNE</strong>, <strong>UMAP</strong>, and <strong>h-NNE</strong> transform complex feature spaces into meaningful 2D representations, revealing clusters, outliers, and relationships that would otherwise remain hidden.
+        </p>
+        <p>
+          Understanding when and how to apply these methods is essential for anyone working with modern AI systems, from dataset curation to model debugging.
+        </p>
+      </div>
+    </div>
+
+    <!-- Block 2: Text LEFT, Image RIGHT (offset down) -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 order-md-1 order-2 mb-4 mb-md-0">
+        <h3 class="fw-bold">Clustering: Discovering Natural Groups</h3>
+        <p>
+          Clustering algorithms like <strong>k-Means</strong>, <strong>DBSCAN</strong>, and <strong>FINCH</strong> organize unstructured data into meaningful groups without supervision. They power knowledge discovery, data curation, and retrieval-augmented generation pipelines.
+        </p>
+        <p>
+          Choosing the right algorithm and understanding its assumptions can mean the difference between actionable insights and misleading artifacts.
+        </p>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <div class="placeholder-img placeholder-right">
+          <span>Clustering Algorithm Comparison</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3: Image LEFT, Text RIGHT -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="placeholder-img placeholder-left">
+          <span>Computer Vision Pipeline</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="fw-bold">From Theory to Practice in Computer Vision</h3>
+        <p>
+          In real-world computer vision workflows, dimensionality reduction and clustering aren't just academic exercises. They're essential tools for dataset exploration, annotation quality control, embedding analysis, and model monitoring.
+        </p>
+        <p>
+          Understanding the trade-offs between speed, scalability, and faithfulness helps practitioners make informed decisions at every stage of the ML lifecycle.
+        </p>
+      </div>
+    </div>
+
+    <!-- Block 4: Text LEFT, Image RIGHT (offset down) -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 order-md-1 order-2 mb-4 mb-md-0">
+        <h3 class="fw-bold">Our Mission</h3>
+        <p>
+          This event series brings together researchers, practitioners, and students to bridge the gap between theoretical advances and practical applications. Through tutorials, workshops, and meetups, we cover the full spectrum from foundational algorithms to cutting-edge methods.
+        </p>
+        <p>
+          Whether you're a PhD student exploring embedding spaces or an industry engineer building production pipelines, our events are designed to deepen your understanding and expand your toolkit.
+        </p>
+      </div>
+      <div class="col-md-6 order-md-2 order-1">
+        <div class="placeholder-img placeholder-right">
+          <span>Event Series Community</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming Events Teaser -->
+{% assign sorted_events = site.events | sort: 'date' | reverse %}
+{% if sorted_events.size > 0 %}
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Upcoming Events</h2>
+      <p class="text-muted">Join us at our next events</p>
+    </div>
+    <div class="row justify-content-center">
+      {% for event in sorted_events limit:3 %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 event-card-inner">
+          {% if event.banner %}
+          <img src="{{ event.banner | relative_url }}" class="card-img-top" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
+          {% endif %}
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-primary mb-2 align-self-start">{{ event.type | capitalize }}</span>
+            <h5 class="card-title">{{ event.title }}</h5>
+            <p class="text-muted mb-2">
+              <small>{{ event.venue }} &middot; {{ event.date | date: "%B %d, %Y" }}</small>
+            </p>
+            {% if event.excerpt_text %}
+            <p class="card-text">{{ event.excerpt_text }}</p>
+            {% endif %}
+            <a href="{{ event.url | relative_url }}" class="btn btn-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

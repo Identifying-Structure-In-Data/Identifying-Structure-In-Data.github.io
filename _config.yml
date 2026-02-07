@@ -1,0 +1,22 @@
+title: "Identifying Structure in Data"
+description: "Tutorials, workshops, and meetups on dimensionality reduction, clustering, and data exploration"
+url: "https://Identifying-Structure-In-Data.github.io"
+baseurl: ""
+
+collections:
+  events:
+    output: true
+    permalink: /events/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+
+exclude:
+  - CLAUDE.md
+  - README.md
+  - LICENSE
+  - .claude

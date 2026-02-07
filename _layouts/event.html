@@ -1,0 +1,178 @@
+---
+layout: default
+---
+
+<!-- Banner Section -->
+{% if page.banner %}
+<section id="banner" class="d-flex align-items-center position-relative" style="height: 100vh; background: url('{{ page.banner | relative_url }}') center/cover no-repeat fixed;">
+  {% if page.conference_logo %}
+  <img src="{{ page.conference_logo | relative_url }}" alt="Conference Logo" class="bannerlogo position-absolute">
+  {% endif %}
+
+  <div class="bannercontainer text-white p-4">
+    <div style="margin-bottom: 5%;">
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <h2>{{ page.subtitle }}</h2>
+      {% endif %}
+    </div>
+    {% if page.format %}
+    <h3>{{ page.format }}</h3>
+    {% endif %}
+    <div>
+      <p>
+        <strong>{{ page.venue }} | {{ page.time }} - {{ page.date | date: "%B %d, %Y" }}</strong><br>
+        <strong>{{ page.location }}</strong><br>
+        {% if page.external_links %}
+        <strong>
+          {% for link in page.external_links %}
+          <a href="{{ link.url }}">{{ link.label }}</a>
+          {% endfor %}
+        </strong>
+        {% endif %}
+      </p>
+    </div>
+    {% if page.calendar_file %}
+    <button id="downloadButton">Download Calendar Event</button>
+    <a id="downloadLink" href="{{ page.calendar_file | relative_url }}" download style="display: none;"></a>
+    <script>
+      document.getElementById('downloadButton').addEventListener('click', function() {
+        document.getElementById('downloadLink').click();
+      });
+    </script>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+<div class="container">
+  <!-- Overview Section -->
+  {% if page.overview %}
+  <section id="overview">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="section-title">{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}</h1>
+        {{ page.overview | markdownify }}
+        {% if page.learning_outcomes %}
+        <h3>Learning Outcomes</h3>
+        <ul>
+          {% for outcome in page.learning_outcomes %}
+          <li>{{ outcome }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Schedule Section -->
+  {% if page.schedule %}
+  <section id="schedule">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Timeline</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Time Slot</th>
+              <th>Speaker</th>
+              <th>Talk Title</th>
+              <th>Slides</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in page.schedule %}
+            <tr>
+              <td>{{ item.time }}</td>
+              {% if item.break %}
+              <td colspan="2">{{ item.talk }}</td>
+              <td></td>
+              {% else %}
+              <td>{{ item.speaker }}</td>
+              <td>{{ item.talk }}</td>
+              <td>
+                {% if item.slides %}
+                <a href="{{ item.slides | relative_url }}">[slides]</a>
+                {% endif %}
+              </td>
+              {% endif %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Materials Section -->
+  {% if page.materials %}
+  <section id="materials">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Materials, Resources &amp; Format</h2>
+        {{ page.materials | markdownify }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Speakers Section -->
+  {% if page.speakers %}
+  <section id="speakers">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Speakers &amp; Organizers</h2>
+      </div>
+    </div>
+    <div class="row">
+      {% for speaker in page.speakers %}
+        {% include speaker-card.html speaker=speaker %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Floorplan Section -->
+  {% if page.floorplan %}
+  <section id="floorplan">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="section-title" style="margin-bottom: -100px;">Where to go?</h1>
+        <div class="text-center">
+          <img src="{{ page.floorplan.image | relative_url }}" style="transform: rotate({{ page.floorplan.rotation | default: 0 }}deg); max-width: 60%; height: auto; margin: 0 auto; border-radius: 10px;">
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Publications Section -->
+  {% if page.publications %}
+  <section id="publications">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Selected Publications</h2>
+        <ul>
+          {% for pub in page.publications %}
+          <li>{{ pub }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Contact Section -->
+  {% if page.contact %}
+  <section id="contact">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="section-title">Contact &amp; Bio Sketches</h2>
+        <p>{{ page.contact }}</p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</div>

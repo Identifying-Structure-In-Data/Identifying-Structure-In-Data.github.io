@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="container" style="margin-top: 80px;">
+  <div class="text-center mb-5">
+    <h1>{{ page.title }}</h1>
+    <p class="lead text-muted">Browse all {{ page.title | downcase }} in the event series</p>
+  </div>
+
+  {% assign filtered_events = site.events | where: "type", page.category | sort: "date" | reverse %}
+
+  {% if filtered_events.size > 0 %}
+  <div class="row" id="event-grid">
+    {% for event in filtered_events %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card h-100 event-card-inner">
+        {% if event.banner %}
+        <img src="{{ event.banner | relative_url }}" class="card-img-top" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <span class="badge bg-primary mb-2 align-self-start">{{ event.type | capitalize }}</span>
+          <h5 class="card-title">{{ event.title }}</h5>
+          <p class="text-muted mb-2">
+            <small>{{ event.venue }} &middot; {{ event.date | date: "%B %d, %Y" }}</small>
+          </p>
+          {% if event.excerpt_text %}
+          <p class="card-text">{{ event.excerpt_text }}</p>
+          {% endif %}
+          <a href="{{ event.url | relative_url }}" class="btn btn-primary mt-auto">View Details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="category-empty">
+    <h3>No {{ page.title | downcase }} yet</h3>
+    <p>Check back soon — new events are added regularly.</p>
+    <a href="{{ '/' | relative_url }}" class="btn btn-outline-primary">Back to Home</a>
+  </div>
+  {% endif %}
+</div>

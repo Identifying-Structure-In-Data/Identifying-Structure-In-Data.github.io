@@ -1,0 +1,29 @@
+<div class="col-md-{{ include.speaker.col | default: 4 }}">
+  <div class="card mb-4 text-center">
+    <div class="card-body">
+      <img src="{{ include.speaker.photo }}" alt="{{ include.speaker.name }}" class="speaker-img rounded-circle mb-2">
+      <h5 class="card-title">{{ include.speaker.name }}</h5>
+      <p class="card-text">
+        <strong>{{ include.speaker.role }}</strong><br />
+        {{ include.speaker.affiliation }}
+      </p>
+      <div class="d-flex justify-content-center">
+        {% if include.speaker.linkedin %}
+        <a href="{{ include.speaker.linkedin }}" target="_blank" class="mx-1">
+          <img src="https://constantinseibold.github.io/assets/img/icons/linkedin.jpg" alt="LinkedIn" class="social-icon rounded-circle">
+        </a>
+        {% endif %}
+        {% if include.speaker.scholar %}
+        <a href="{{ include.speaker.scholar }}" target="_blank" class="mx-1">
+          <img src="https://constantinseibold.github.io/assets/img/icons/scholar.jpg" alt="Google Scholar" class="social-icon rounded-circle">
+        </a>
+        {% endif %}
+        {% if include.speaker.website %}
+        <a href="{{ include.speaker.website }}" target="_blank" class="mx-1">
+          <img src="{{ '/assets/images/speakers/website-icon.png' | relative_url }}" alt="Website" class="social-icon rounded-circle">
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

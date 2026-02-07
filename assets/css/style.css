@@ -1,0 +1,235 @@
+body {
+  padding-top: 0px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.overlay-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+.section-title {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  margin-top: 60px;
+}
+
+/* Speaker images and social icons */
+.speaker-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Banner styling */
+#banner img {
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#downloadButton {
+  padding: 12px 30px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#downloadButton:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+#downloadButton:active {
+  background-color: #388e3c;
+  transform: scale(0.98);
+}
+
+.bannerlogo {
+  width: 30%;
+  height: auto;
+  z-index: 2;
+  opacity: 0.8;
+  margin-top: -25%;
+  margin-left: 60%;
+}
+
+.bannercontainer {
+  max-width: 40%;
+  background: rgba(255, 255, 255, 0.108);
+  margin-left: 15%;
+  margin-top: 15%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .bannercontainer {
+    margin-left: 10%;
+    max-width: 80%;
+  }
+
+  .bannerlogo {
+    visibility: hidden;
+  }
+}
+
+/* Landing page event cards */
+.event-card-inner {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card-inner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Filter buttons */
+.filter-btn {
+  margin: 0 4px;
+}
+
+.filter-btn.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* ========================================
+   Navbar Dropdown Hover (desktop)
+   ======================================== */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.navbar .dropdown-menu {
+  min-width: 280px;
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+.hero-section {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  position: relative;
+  overflow: hidden;
+  padding-top: 56px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.hero-section h1 {
+  font-size: 3.2rem;
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 60vh;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-tagline {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   Placeholder Images
+   ======================================== */
+.placeholder-img {
+  background-color: #e9ecef;
+  border: 2px dashed #adb5bd;
+  border-radius: 12px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.placeholder-img span {
+  color: #6c757d;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ========================================
+   Stagger Offsets
+   ======================================== */
+.placeholder-left {
+  margin-top: -20px;
+}
+
+.placeholder-right {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .placeholder-left,
+  .placeholder-right {
+    margin-top: 0;
+  }
+}
+
+/* ========================================
+   Content Section Typography
+   ======================================== */
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#about h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+#about p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #495057;
+}
+
+/* ========================================
+   Category Page
+   ======================================== */
+.category-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
