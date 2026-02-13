@@ -130,5 +130,13 @@ publications:
   - 'Nussbaum, Z., Morris, J.X., Duderstadt, B., Mulyar, A. "Nomic embed: Training a reproducible long context text embedder". arXiv preprint 2024.'
   - 'Helm, H., Duderstadt, B., Park, Y., Priebe, C. "Tracking the perspectives of interacting language models". Empirical Methods in Natural Language Processing (EMNLP) 2024.'
 
+impressions:
+  - image: /assets/images/impressions/cvpr2025/brandon-duderstadt.jpeg
+    caption: "Brandon Duderstadt presenting on scaling dimensionality reduction with NOMAD projection"
+  - image: /assets/images/impressions/cvpr2025/laurens-van-der-maaten.jpeg
+    caption: "Laurens van der Maaten on how to use and not use modern dimension reduction techniques"
+  - image: /assets/images/impressions/cvpr2025/saquib-sarfraz.jpeg
+    caption: "M. Saquib Sarfraz on clustering and representation learning"
+
 contact: "For further information or inquiries, please contact the organizers via the social links provided in the speakers' section."
 ---

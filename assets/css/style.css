@@ -65,31 +65,78 @@ footer {
 }
 
 .bannerlogo {
-  width: 30%;
+  width: 20%;
   height: auto;
   z-index: 2;
   opacity: 0.8;
-  margin-top: -25%;
-  margin-left: 60%;
+  top: 15%;
+  right: 5%;
+  left: auto;
+  margin: 0;
 }
 
-.bannercontainer {
-  max-width: 40%;
-  background: rgba(255, 255, 255, 0.108);
-  margin-left: 15%;
-  margin-top: 15%;
-  margin-bottom: 5%;
-  border-radius: 10px;
+/* Banner overlay row: info card + carousel side by side */
+.banner-overlay-row {
+  position: relative;
+  z-index: 3;
+  margin-top: -60vh;
+  margin-bottom: 60px;
+}
+
+.banner-info-card {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.banner-info-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.banner-info-card h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.banner-info-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-info-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.banner-info-card a.text-white {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.banner-carousel-card {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 768px) {
-  .bannercontainer {
-    margin-left: 10%;
-    max-width: 80%;
+  .bannerlogo {
+    display: none;
   }
 
-  .bannerlogo {
-    visibility: hidden;
+  .banner-overlay-row {
+    margin-top: -20vh;
+  }
+
+  .banner-info-card h1 {
+    font-size: 1.4rem;
+  }
+
+  .banner-info-card h2 {
+    font-size: 1rem;
   }
 }
 
@@ -132,7 +179,7 @@ footer {
    ======================================== */
 .hero-section {
   min-height: 80vh;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background: url('/assets/images/banners/cvpr2025-banner.jpg') center/cover no-repeat;
   position: relative;
   overflow: hidden;
   padding-top: 56px;
@@ -141,18 +188,17 @@ footer {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background: rgba(0, 0, 0, 0.55);
   pointer-events: none;
 }
 
 .hero-section h1 {
   font-size: 3.2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.hero-tagline {
-  font-size: 1.15rem;
-  opacity: 0.8;
+.hero-section .lead {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -161,9 +207,6 @@ footer {
   }
   .hero-section h1 {
     font-size: 2rem;
-  }
-  .hero-tagline {
-    font-size: 1rem;
   }
 }
 
@@ -228,6 +271,31 @@ footer {
 /* ========================================
    Category Page
    ======================================== */
+/* ========================================
+   Impressions Carousel
+   ======================================== */
+#impressionsCarousel .carousel-inner {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#impressionsCarousel .carousel-item img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+#impressionsCarousel .carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 8px 16px;
+  bottom: 20px;
+}
+
+#impressionsCarousel .carousel-caption p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 .category-empty {
   text-align: center;
   padding: 60px 20px;

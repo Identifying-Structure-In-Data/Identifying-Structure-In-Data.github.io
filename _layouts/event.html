@@ -4,47 +4,84 @@ layout: default
 
 <!-- Banner Section -->
 {% if page.banner %}
-<section id="banner" class="d-flex align-items-center position-relative" style="height: 100vh; background: url('{{ page.banner | relative_url }}') center/cover no-repeat fixed;">
+<section id="banner" class="position-relative" style="height: 100vh; background: url('{{ page.banner | relative_url }}') center/cover no-repeat fixed;">
   {% if page.conference_logo %}
   <img src="{{ page.conference_logo | relative_url }}" alt="Conference Logo" class="bannerlogo position-absolute">
   {% endif %}
-
-  <div class="bannercontainer text-white p-4">
-    <div style="margin-bottom: 5%;">
-      <h1>{{ page.title }}</h1>
-      {% if page.subtitle %}
-      <h2>{{ page.subtitle }}</h2>
-      {% endif %}
-    </div>
-    {% if page.format %}
-    <h3>{{ page.format }}</h3>
-    {% endif %}
-    <div>
-      <p>
-        <strong>{{ page.venue }} | {{ page.time }} - {{ page.date | date: "%B %d, %Y" }}</strong><br>
-        <strong>{{ page.location }}</strong><br>
-        {% if page.external_links %}
-        <strong>
-          {% for link in page.external_links %}
-          <a href="{{ link.url }}">{{ link.label }}</a>
-          {% endfor %}
-        </strong>
-        {% endif %}
-      </p>
-    </div>
-    {% if page.calendar_file %}
-    <button id="downloadButton">Download Calendar Event</button>
-    <a id="downloadLink" href="{{ page.calendar_file | relative_url }}" download style="display: none;"></a>
-    <script>
-      document.getElementById('downloadButton').addEventListener('click', function() {
-        document.getElementById('downloadLink').click();
-      });
-    </script>
-    {% endif %}
-  </div>
 </section>
 {% endif %}
 
+<!-- Info + Carousel overlay straddling banner bottom -->
+<div class="banner-overlay-row">
+  <div class="container">
+    <div class="row align-items-center gx-4">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="banner-info-card text-white p-4">
+          <h1>{{ page.title }}</h1>
+          {% if page.subtitle %}
+          <h2>{{ page.subtitle }}</h2>
+          {% endif %}
+          {% if page.format %}
+          <h3>{{ page.format }}</h3>
+          {% endif %}
+          <p>
+            <strong>{{ page.venue }} | {{ page.time }} - {{ page.date | date: "%B %d, %Y" }}</strong><br>
+            <strong>{{ page.location }}</strong><br>
+            {% if page.external_links %}
+            <strong>
+              {% for link in page.external_links %}
+              <a href="{{ link.url }}" class="text-white">{{ link.label }}</a>
+              {% endfor %}
+            </strong>
+            {% endif %}
+          </p>
+          {% if page.calendar_file %}
+          <button id="downloadButton">Download Calendar Event</button>
+          <a id="downloadLink" href="{{ page.calendar_file | relative_url }}" download style="display: none;"></a>
+          <script>
+            document.getElementById('downloadButton').addEventListener('click', function() {
+              document.getElementById('downloadLink').click();
+            });
+          </script>
+          {% endif %}
+        </div>
+      </div>
+      {% if page.impressions %}
+      <div class="col-lg-6">
+        <div id="impressionsCarousel" class="carousel slide banner-carousel-card" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            {% for item in page.impressions %}
+            <button type="button" data-bs-target="#impressionsCarousel" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
+            {% endfor %}
+          </div>
+          <div class="carousel-inner">
+            {% for item in page.impressions %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ item.image | relative_url }}" class="d-block w-100" alt="{{ item.caption }}">
+              {% if item.caption %}
+              <div class="carousel-caption d-none d-md-block">
+                <p>{{ item.caption }}</p>
+              </div>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          {% if page.impressions.size > 1 %}
+          <button class="carousel-control-prev" type="button" data-bs-target="#impressionsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#impressionsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
 <div class="container">
   <!-- Overview Section -->
   {% if page.overview %}

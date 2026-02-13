@@ -7,20 +7,18 @@ layout: default
   <div class="hero-overlay"></div>
   <div class="container position-relative text-center text-white">
     <h1 class="display-3 fw-bold mb-3">{{ site.title }}</h1>
-    <p class="lead mb-2" style="max-width: 700px; margin: 0 auto;">{{ site.description }}</p>
-    <p class="hero-tagline mb-4">Bridging theory and practice in data exploration</p>
+    <p class="lead mb-4" style="max-width: 700px; margin: 0 auto;">{{ site.description }}</p>
     <div class="d-flex justify-content-center gap-3 flex-wrap">
-      <a href="#about" class="btn btn-light btn-lg">Learn More</a>
+      <a href="#about" class="btn btn-light btn-lg">About the Series</a>
       <a href="{{ '/tutorials/' | relative_url }}" class="btn btn-outline-light btn-lg">Browse Events</a>
     </div>
   </div>
 </section>
 
-<!-- Why This Matters Section -->
+<!-- About Section -->
 <section id="about" class="py-5">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="fw-bold">Why This Matters</h2>
       <p class="lead text-muted" style="max-width: 720px; margin: 0 auto;">
         As datasets grow to millions of samples and models scale to billions of parameters, understanding the structure hidden within data has never been more critical.
       </p>
@@ -29,12 +27,10 @@ layout: default
     <!-- Block 1: Image LEFT, Text RIGHT -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <div class="placeholder-img placeholder-left">
-          <span>Dimensionality Reduction Visualization</span>
-        </div>
+        <img src="{{ '/assets/images/dr-visualization.png' | relative_url }}" alt="Dimensionality reduction scatter plot" class="img-fluid rounded" style="border-radius: 12px;">
       </div>
       <div class="col-md-6">
-        <h3 class="fw-bold">The Curse of Dimensionality</h3>
+        <h3 class="fw-bold">What does your data actually look like?</h3>
         <p>
           High-dimensional data is inherently difficult to visualize and interpret. Techniques like <strong>t-SNE</strong>, <strong>UMAP</strong>, and <strong>h-NNE</strong> transform complex feature spaces into meaningful 2D representations, revealing clusters, outliers, and relationships that would otherwise remain hidden.
         </p>
@@ -56,58 +52,35 @@ layout: default
         </p>
       </div>
       <div class="col-md-6 order-md-2 order-1">
-        <div class="placeholder-img placeholder-right">
-          <span>Clustering Algorithm Comparison</span>
-        </div>
+        <img src="{{ '/assets/images/clustering-dendrogram.png' | relative_url }}" alt="Hierarchical clustering dendrogram" class="img-fluid rounded" style="border-radius: 12px;">
       </div>
     </div>
 
-    <!-- Block 3: Image LEFT, Text RIGHT -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <div class="placeholder-img placeholder-left">
-          <span>Computer Vision Pipeline</span>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <h3 class="fw-bold">From Theory to Practice in Computer Vision</h3>
-        <p>
-          In real-world computer vision workflows, dimensionality reduction and clustering aren't just academic exercises. They're essential tools for dataset exploration, annotation quality control, embedding analysis, and model monitoring.
-        </p>
-        <p>
-          Understanding the trade-offs between speed, scalability, and faithfulness helps practitioners make informed decisions at every stage of the ML lifecycle.
-        </p>
-      </div>
-    </div>
-
-    <!-- Block 4: Text LEFT, Image RIGHT (offset down) -->
+    <!-- Block 3: Text LEFT, Image RIGHT -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6 order-md-1 order-2 mb-4 mb-md-0">
-        <h3 class="fw-bold">Our Mission</h3>
+        <h3 class="fw-bold">Tutorials, Workshops, and Meetups</h3>
         <p>
-          This event series brings together researchers, practitioners, and students to bridge the gap between theoretical advances and practical applications. Through tutorials, workshops, and meetups, we cover the full spectrum from foundational algorithms to cutting-edge methods.
+          This event series brings together researchers, practitioners, and students to bridge the gap between theoretical advances and practical applications &mdash; from foundational algorithms to cutting-edge methods.
         </p>
         <p>
           Whether you're a PhD student exploring embedding spaces or an industry engineer building production pipelines, our events are designed to deepen your understanding and expand your toolkit.
         </p>
       </div>
       <div class="col-md-6 order-md-2 order-1">
-        <div class="placeholder-img placeholder-right">
-          <span>Event Series Community</span>
-        </div>
+        <img src="{{ '/assets/images/impressions/cvpr2025/saquib-sarfraz.jpeg' | relative_url }}" alt="M. Saquib Sarfraz presenting at CVPR 2025 tutorial" class="img-fluid rounded" style="border-radius: 12px;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Upcoming Events Teaser -->
+<!-- Events -->
 {% assign sorted_events = site.events | sort: 'date' | reverse %}
 {% if sorted_events.size > 0 %}
 <section class="py-5 bg-light">
   <div class="container">
     <div class="text-center mb-4">
-      <h2 class="fw-bold">Upcoming Events</h2>
-      <p class="text-muted">Join us at our next events</p>
+      <h2 class="fw-bold">Events</h2>
     </div>
     <div class="row justify-content-center">
       {% for event in sorted_events limit:3 %}
